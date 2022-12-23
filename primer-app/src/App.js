@@ -5,7 +5,9 @@ import Primero from './components/primero';
 function App() {
   return (
     <div className="App">
-     <Primero/>
+     <Primero
+     nombre="Santiago"
+     edad="12"/>
     </div>
   );
 }
