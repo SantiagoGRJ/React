@@ -3,14 +3,17 @@ import './App.css';
 import logo from './img/logo.png';
 import Boton from './components/boton';
 import Contador from './components/contador';
+import { useState } from 'react';
 
 function App() {
 
+  const [numero,setnumero] = useState(0);
+
   const Manejar = () => {
-    console.log("Click");
+    setnumero(numero+1);
   }
   const Reiniciar = () => {
-    console.log("Reiniciar");
+    setnumero(0);
   }
 
   return (
@@ -24,7 +27,7 @@ function App() {
        
         </div>   
         <div className='contenedor-principal'>
-       <Contador numero='5' />
+       <Contador numero={numero} />
 
         <Boton
         Texto='Click'
