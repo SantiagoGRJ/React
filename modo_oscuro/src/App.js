@@ -1,23 +1,25 @@
 import logo from './logo.svg';
 import './App.css';
+import { Header } from './components/header';
+import { useState } from 'react';
 
 function App() {
+  const [Dark,setDark]= useState(false)
+
+  const ModeDark = () =>{
+    document.documentElement.classList.toggle('dark')
+    setDark(!Dark)
+  }
+
+  const Text = Dark ? 'Modo Oscuro' : 'Modo Claro'
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App dark:bg-black bg-blue-700 min-h-screen">
+      <Header
+      text={Text}
+      Funcion={ModeDark}
+      />
     </div>
   );
 }
